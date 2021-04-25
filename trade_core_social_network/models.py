@@ -1,4 +1,5 @@
 from django.db import models
+import requests
 
 
 class User(models.Model):
@@ -6,6 +7,12 @@ class User(models.Model):
     geolocation_data = models.IPAddressField()
     holiday = models.JSONField(blank=True, null=True)
     token = models.CharField(max_length=300)
+
+    # add the email validation before saving users
+    def save(self, *args, **kwargs):
+        # verify the email
+        
+        super().save(self, *args, **kwargs)
 
 
 class Post(models.Model):
