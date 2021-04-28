@@ -1,4 +1,4 @@
-bmat-report-isrcs
+trade_core_social_network
 ==================
 
 |Python-Versions| |pip-Version| |Django-Version| |DjangoRest-Version| |Environ-Version| |Bcrypt-Version| |Celery-Version| |DjangoRestJWT-Version|
