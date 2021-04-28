@@ -2,13 +2,17 @@ from django.db import models
 
 
 class User(models.Model):
+    id = models.AutoField
     email = models.EmailField(primary_key=True)
     password = models.CharField(max_length=512)
-    geolocation_data_ip = models.GenericIPAddressField()
+    geolocation_data_ip = models.GenericIPAddressField(blank=True, null=True)
     geolocation_data_country = models.CharField(max_length=200)
     holiday = models.CharField(max_length=300, blank=True, null=True)
     token = models.CharField(max_length=300)
     created_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        print(self.geolocation_data_ip)
 
 
 class Post(models.Model):

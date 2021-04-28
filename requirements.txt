@@ -4,3 +4,4 @@ requests
 django-environ
 bcrypt
 celery
+djangorestframework-simplejwt
