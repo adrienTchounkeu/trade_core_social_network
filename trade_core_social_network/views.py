@@ -28,7 +28,7 @@ class UserList(viewsets.ViewSet):
             user.email = data['email']
             user.password = make_password(data['password'])
             user.save()
-            data_enrichment(user.email)  # data enrichment
+            data_enrichment.delay(user.email)  # data enrichment
             print("Data enrichment -- test")
             serializer = UserSerializer(user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
